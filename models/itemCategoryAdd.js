@@ -32,7 +32,7 @@ class itemCategoryForm extends React.Component {
           type = "submit" 
             value = "Submit" 
           />
-          
+
       </form>
     );
   }
