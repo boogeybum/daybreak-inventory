@@ -1,8 +1,8 @@
-class itemCategoryForm extends React.Component {
+class categoryForm extends React.Component {
   constructor(props) {
     super(props);
     this.this.state = {
-      description: '',
+      category: '',
     };
 
     this.handleChange.bind(this);
@@ -11,7 +11,7 @@ class itemCategoryForm extends React.Component {
 
   handleChange(event) {
     const target = event.target;
-    const description = target.description;
+    const category = target.category;
 
     this.setState({ value : event.target.value });
   }
@@ -20,11 +20,11 @@ class itemCategoryForm extends React.Component {
     return (
       <form onSubmit = {this.handleSubmit}>
         <label>
-          description:
+          category:
           <input
-            name = "description"
+            name = "category"
             type = "text"
-            value = {this.state.description}
+            value = {this.state.category}
             onChange = {this.handleInputChange} 
           />
         </label>
