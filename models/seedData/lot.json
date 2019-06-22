@@ -1,0 +1,23 @@
+[
+    {
+      "colorhexcode": "#FFFF00",
+      "totalitemcount": "30",
+      "purchasedate": "04/25/2019",
+      "colordesc": "yellow",
+      "cost": "600.00"
+    },
+    {
+      "colorhexcode": "#FF0000",
+      "totalitemcount": "20",
+      "purchasedate": "04/28/2019",
+      "colordesc": "red",
+      "cost": "300.00"
+    },
+    {
+      "colorhexcode": "#0000FF",
+      "totalitemcount": "20",
+      "purchasedate": "04/30/2019",
+      "colordesc": "blue",
+      "cost": "200.00"
+    }
+  ]
