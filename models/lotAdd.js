@@ -31,13 +31,38 @@ class LotsForm extends React.Component {
           <label>
             color:
             <input
+            name="color"
              type="text" 
              value={this.state.color} 
              onChange={this.handleInputChange} />
           </label>
           <input type="submit" value="Submit" />
           <br />
-          
+          count:
+          <input
+          name="count"
+          type="text"
+          value={this.state.count}
+          onchange={this.handleInputCHange} />
+          date Purchased:
+          <input
+          name="date purchased"
+          type="text"
+          value={this.state.datePurchased}
+          onchange={this.handleInputCHange} />
+          purchase price:
+          <input
+          name="purchase price"
+          type="number"
+          value={this.state.purchasePrice}
+          onchange={this.handleInputCHange} />
+          seller:
+          <input
+          name="seller"
+          type="text"
+          value={this.state.seller}
+          onchange={this.handleSubmit} />
+
         </form>
       );
     }
