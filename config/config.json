@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "dummy",
+    "password": "788@IdmdemMdimdoc",
     "database": "daybreak_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -9,16 +9,15 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "788@IdmdemMdimdoc",
+    "database": "daybreak_testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "logging": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
