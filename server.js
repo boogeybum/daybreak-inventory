@@ -17,6 +17,10 @@ if (process.env.NODE_ENV === "production") {
 
 var db = require("./models");
 var _LOTS = require("./models/seedData/lot.json");
+var _CUSTOMERS = require("./models/seedData/customer.json");
+var _PRICERANGE = require("./models/seedData/pricerange.json");
+var _ITEMCATEGORY = require("./models/seedData/itemcategory.json"); var _USERS = require("./models/seedData/users.json");
+var _ITEMCATEGORY = require("./models/seedData/itemcategory.json"); var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
 var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
@@ -32,11 +36,51 @@ db.sequelize
       if(syncOptions.force === true) {
         db.Lot.bulkCreate(_LOTS)
         .then(function(lots) {
-            console.log("success seeding lots" + lots);
+            console.log("success seeding LOTS " + lots);
         })
         .catch(function(error) {
             console.log(error);
         });
+        db.Customer.bulkCreate(_CUSTOMERS)
+        .then(function(customers) {
+            console.log("success seeding CUSTOMERS " + customers);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        db.Pricerange.bulkCreate(_PRICERANGE)
+        .then(function(pricerange) {
+            console.log("success seeding PRICERANGE " + pricerange);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        db.Itemcategory.bulkCreate(_ITEMCATEGORY)
+        .then(function(itemcategory) {
+            console.log("success seeding ITEMCATEGORY " + itemcategory);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        db.User.bulkCreate(_USERS)
+        .then(function(users) {
+            console.log("success seeding USERS " + users);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        db.Inventoryitem.bulkCreate(_INVENTORYITEMS)
+        .then(function(inventoryitems) {
+            console.log("success seeding INVENTORYITEMS " + inventoryitems);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+
+
+
+
     }
   });
   

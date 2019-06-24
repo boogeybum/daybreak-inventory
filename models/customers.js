@@ -25,6 +25,18 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true,
         len: [1, 75]
       }
+    },
+    address: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 100]
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 25]
+      }
     }
   });
 
@@ -33,33 +45,6 @@ module.exports = function(sequelize, DataTypes) {
   //     onDelete: "set null"
   //   });
   // };
-  /*
-  Customer.create({
-    firstname: "Herman",
-    lastname: "Munster",
-    email: "herman@munsters.com"
-  }).then(function(customer) {
-    console.log(customer.get("firstname"));
-    console.log(customer.get("email"));
-  });
 
-  Customer.create({
-    firstname: "Homer",
-    lastname: "Simpson",
-    email: "homer@simpsons.com"
-  }).then(function(customer) {
-    console.log(customer.get("firstname"));
-    console.log(customer.get("email"));
-  });
-
-  Customer.create({
-    firstname: "Chuck",
-    lastname: "Norris",
-    email: "cnorris@kungfu.com"
-  }).then(function(customer) {
-    console.log(customer.get("firstname"));
-    console.log(customer.get("email"));
-  });
-*/
   return Customer;
 };
