@@ -6,34 +6,28 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       allowNull: false
     },
-    // colorhexcode: {
-    //   type: DataTypes.STRING,
-    //   validate: {
-    //     len: [1, 10]
-    //   }
-    // },
-    count: {
+     count: {
       type: DataTypes.INTEGER
     },
     cost: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DOUBLE
     },
     purchasedate: {
       type: DataTypes.DATE
+    },
+    color: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 25]
+      }
     }
-    // colordesc: {
-    //   type: DataTypes.STRING,
-    //   validate: {
-    //     len: [1, 50]
-    //   }
-    // }
   });
 
-  // Lot.associate = function(models) {
-  //   Lot.hasMany(models.Inventoryitem, {
-  //     // onDelete: "set null"
-  //   });
-  // };
+  Lot.associate = function(models) {
+    Lot.hasMany(models.Inventoryitem, {
+      onDelete: "set null"
+    });
+  };
 
   return Lot;
 };
