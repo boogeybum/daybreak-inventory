@@ -1,0 +1,23 @@
+[
+{
+    "firstname": "Herman",
+    "lastname": "Munster",
+    "email": "herman@munsters.com",
+    "address": "1313 Mockingbird Ln",
+    "phone": "555 555 1212"
+},
+{
+    "firstname": "Homer",
+    "lastname": "Simpson",
+    "email": "homer@simpsons.com",
+    "address": "742 Evergreen Terrace",
+    "phone": "234 567 7890"
+},
+{
+    "firstname": "Chuck",
+    "lastname": "Norris",
+    "email": "cnorris@kungfu.com",
+    "address": "12 Kickbutt St",
+    "phone": "909 999 0909"
+}
+]  

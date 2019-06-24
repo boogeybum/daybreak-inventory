@@ -1,0 +1,22 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Roscoe5113!",
+    "database": "daybreak_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Roscoe5113!",
+    "database": "daybreak_testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}

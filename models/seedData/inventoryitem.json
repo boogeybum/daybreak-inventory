@@ -1,0 +1,58 @@
+[
+{
+    "LotId": 1,
+    "ItemcategoryId": 1,
+    "PricerangeId": 1,
+    "price": 3.0,
+    "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 1,
+    "ItemcategoryId": 2,
+    "PricerangeId": 1,
+    "price": 2.0,
+    "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 2,
+    "ItemcategoryId": 3,
+    "PricerangeId": 1,
+    "price": 3.0,
+    "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 2,
+    "ItemcategoryId": 4,
+    "PricerangeId": 1,
+    "price": 3.0,
+    "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 2,
+    "ItemcategoryId": 5,
+    "PricerangeId": 1,
+    "price": 3.0,
+    "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 3,
+    "ItemcategoryId": 6,
+    "PricerangeId": 1,
+    "price": 3.0,
+   "totalinstock": 10,
+    "totalsales": 0.0
+},
+{
+    "LotId": 3,
+    "ItemcategoryId": 7,
+    "PricerangeId": 1,
+    "price": 3.0,
+   "totalinstock": 10,
+    "totalsales": 0.0
+}
+]  
