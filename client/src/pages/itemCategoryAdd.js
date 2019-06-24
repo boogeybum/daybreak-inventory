@@ -1,10 +1,9 @@
-import React from 'react';
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 // Uncomment after creating the corresponding files
 import CategoryForm from "../components/categoryForm/CategoryForm";
 // import API from "..utils/API";
 
-class itemCategoryForm extends React.Component {
+class itemCategoryForm extends Component {
   constructor(props) {
     super(props);
     this.this.state = {
