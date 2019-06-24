@@ -22,7 +22,7 @@ var _PRICERANGE = require("./models/seedData/pricerange.json");
 var _ITEMCATEGORY = require("./models/seedData/itemcategory.json");
 var _USERS = require("./models/seedData/users.json");
 var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

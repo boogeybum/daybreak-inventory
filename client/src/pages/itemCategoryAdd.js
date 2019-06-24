@@ -1,7 +1,7 @@
 import React from 'react';
 // import React, { Component } from 'react';
 // Uncomment after creating the corresponding files
-// import CategoryForm from "../components/CategoryForm";
+import CategoryForm from "../components/categoryForm/CategoryForm";
 // import API from "..utils/API";
 
 class itemCategoryForm extends React.Component {
@@ -25,7 +25,7 @@ class itemCategoryForm extends React.Component {
   render() {
     return (
       <main>
-        {/* <CategoryForm /> */}
+        <CategoryForm />
       <form onSubmit = {this.handleSubmit}>
         <label>
           Item Category:
