@@ -1,8 +1,14 @@
-class categoryForm extends React.Component {
+import React from 'react';
+// import React, { Component } from 'react';
+// Uncomment after creating the corresponding files
+// import CategoryForm from "../components/CategoryForm";
+// import API from "..utils/API";
+
+class itemCategoryForm extends React.Component {
   constructor(props) {
     super(props);
     this.this.state = {
-      category: '',
+      itemCategory: '',
     };
 
     this.handleChange.bind(this);
@@ -11,20 +17,22 @@ class categoryForm extends React.Component {
 
   handleChange(event) {
     const target = event.target;
-    const category = target.category;
+    const itemCategory = target.itemCategory;
 
     this.setState({ value : event.target.value });
   }
 
   render() {
     return (
+      <main>
+        {/* <CategoryForm /> */}
       <form onSubmit = {this.handleSubmit}>
         <label>
-          category:
+          Item Category:
           <input
-            name = "category"
+            name = "itemCategory"
             type = "text"
-            value = {this.state.category}
+            value = {this.state.itemCategory}
             onChange = {this.handleInputChange} 
           />
         </label>
@@ -34,6 +42,9 @@ class categoryForm extends React.Component {
           />
 
       </form>
+      </main>
     );
   }
 }
+
+export default itemCategoryForm;
