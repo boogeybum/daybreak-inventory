@@ -1,0 +1,16 @@
+[
+{
+    "userid": "immanager",
+    "name": "I Am Manager",
+    "email": "immanager@mybiz.com",
+    "role": "manager",
+    "password": "password123"
+},
+{
+    "userid": "imclerk",
+    "name": "I Clerk",
+    "email": "iclerk@mybiz.com",
+    "role": "742 Evergreen Terrace",
+    "password": "password123"
+}
+]  
