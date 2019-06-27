@@ -1,19 +1,20 @@
-// require("dotenv").config();
+require("dotenv").config();
 // const axios = require('axios');
 const db = require('../models');
 const path = require('path');
 
 module.exports = function(app) {
-  app.get("/api/Itemcategory", (req, res) => {
-    db.Itemcategory.find().then(
-      (ItemcategoryData) => {
-        res.json(ItemcategoryData);
+  app.get("/api/itemcategory", (req, res) => {
+    db.Itemcategory.findAll()
+    .then(
+      (result) => {
+        res.json(result);
       }
     ).catch(
       (err) => {
         res.json({ error : err });
       }
-    );
+    );  
   });
 
   // app.post("api/Itemcategory", (req, res) => {
@@ -27,6 +28,7 @@ module.exports = function(app) {
   //     }
   //   );
   // });
+  
 
   // Send every other request to the React app
   // Define any API routes before this runs
