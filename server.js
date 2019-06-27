@@ -12,8 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Define API routes here
-// require("./routes/api-routes")(app);
-app.use('/api/Itemcategory', require('./routes/api-routes'));
+require("./routes/api-routes")(app);
+// app.use('/api/Itemcategory', require('./routes/api-routes'));
 
 
 var db = require("./models");
@@ -23,6 +23,7 @@ var _PRICERANGE = require("./models/seedData/pricerange.json");
 var _ITEMCATEGORY = require("./models/seedData/itemcategory.json");
 var _USERS = require("./models/seedData/users.json");
 var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
+
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
@@ -86,18 +87,6 @@ db.sequelize
     }
   });
   
-//Connect to mongo db
-// const mongoose = require("mongoose");
-// const mongoURL = process.env.MONGODB_URI || "mongodb://user1:Password123@ds237267.mlab.com:37267/heroku_n56w7j3c";
-// const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/google-book-search";
-// mongoose.connect(mongoURL , {useNewUrlParser:true})
-// .then(() => {
-//   console.log("Successfully connected to Mongo DB");
-// })
-// .catch((err) => {
-//   console.log(`Error connecting to Mongo DB: ${err}`);
-// });
-
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
