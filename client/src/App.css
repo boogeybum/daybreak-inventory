@@ -10,17 +10,44 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 10vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Navsidebar {
+  background-color: #282c34;
+  min-height: 5vh;
+  max-width: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+}
+
+.NavLink {
+  color: white;
+  margin: 1px 20px;
+}
+
+.NavLink :hover {
+  background-color: #000000;
+  color: #bb1a1a;
+  text-decoration: none;
+}
+
+.NavLink :active {
+  background-color: #000000;
+  color: #1414df;
 }
 
 @keyframes App-logo-spin {

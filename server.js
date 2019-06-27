@@ -12,8 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Define API routes here
-// require("./routes/inventoryitem-api-routes")(app);
 require("./routes/api-routes")(app);
+// app.use('/api/Itemcategory', require('./routes/api-routes'));
 
 
 var db = require("./models");
