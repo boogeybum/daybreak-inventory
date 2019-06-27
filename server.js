@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Define API routes here
-// require("./routes/api-routes")(app);
+require("./routes/api-routes")(app);
 
 
 var db = require("./models");

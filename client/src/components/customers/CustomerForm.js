@@ -6,7 +6,7 @@ class CustomerForm extends Component {
         return (
             <div
                 id="add-customer"
-                className="collapse"
+                // className="collapse"
             >
                 <form>
                     <FormRow>
