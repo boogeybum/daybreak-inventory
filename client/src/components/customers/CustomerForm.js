@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Input, TextArea, FormBtn, FormRow } from "../form tools/form";
+import API from "../../utils/API";
 
 class CustomerForm extends Component {
     // setting a state representing customer details

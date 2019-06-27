@@ -11,6 +11,7 @@ function Nav() {
             <Link className="NavLink" to="/customers">Customers</Link>
             <Link className="NavLink" to="/checkout">Checkout</Link>
             <Link className="NavLink" to="/logout">Logout</Link>
+            <Link className="NavLink" to="/logout">Send Email</Link>
         </nav>
     );
 }

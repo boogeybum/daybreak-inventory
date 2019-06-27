@@ -7,4 +7,7 @@ export default {
   // addCategoryToDB: (itemcategoriesData) => {
   //   return axios.post("/api/Itemcategory", itemcategoriesData);
   // }
+  // getCustomers: () => {
+  //   return axios.get("api/customers");
+  // }
 }
