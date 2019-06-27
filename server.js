@@ -12,7 +12,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-// require("./routes/api-routes")(app);
+// require("./routes/inventoryitem-api-routes")(app);
+require("./routes/api-routes")(app);
 
 
 var db = require("./models");
@@ -21,7 +22,7 @@ var _CUSTOMERS = require("./models/seedData/customer.json");
 var _PRICERANGE = require("./models/seedData/pricerange.json");
 var _ITEMCATEGORY = require("./models/seedData/itemcategory.json"); var _USERS = require("./models/seedData/users.json");
 var _ITEMCATEGORY = require("./models/seedData/itemcategory.json"); var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -84,6 +85,19 @@ db.sequelize
     }
   });
   
+
+//   var mysql = require('mysql');
+
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Roscoe5113!"
+// });
+
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected to db!");
+// });
 //Connect to mongo db
 // const mongoose = require("mongoose");
 // const mongoURL = process.env.MONGODB_URI || "mongodb://user1:Password123@ds237267.mlab.com:37267/heroku_n56w7j3c";
@@ -95,7 +109,6 @@ db.sequelize
 // .catch((err) => {
 //   console.log(`Error connecting to Mongo DB: ${err}`);
 // });
-
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
