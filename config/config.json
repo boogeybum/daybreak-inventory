@@ -1,14 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "Roscoe5113!",
+    "password": "788@IdmdemMdimdoc",
     "database": "daybreak_db",
-    "host": "localhost",
+    "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Roscoe5113!",
+    "password": "788@IdmdemMdimdoc",
     "database": "daybreak_testdb",
     "host": "localhost",
     "dialect": "mysql",
