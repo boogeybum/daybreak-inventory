@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import LotsForm from "./components";
+import LotForm from "./components";
 import itemscategoriesForm from "./pages/itemCategoryForm";
 // import InventoryForm from "./components";
 // import UsersForm from "./components";
@@ -19,7 +19,7 @@ class App extends Component {
           <Header />
           <Nav />
           <Switch>
-            {/* <Route exact path="/lots" component={LotsForm}/> */}
+            <Route exact path="/lots" component={LotForm}/>
             <Route exact path="/itemcategories" component={itemscategoriesForm}/>
             {/* <Route exact path="/inventory" component={InventoryForm}/> */}
             {/* <Route exact path="/users" component={UsersForm}/> */}
