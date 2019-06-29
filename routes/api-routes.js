@@ -1,8 +1,9 @@
 require("dotenv").config();
-const axios = require("axios");
+// const sequelize = require("axios");
 const db = require("../models");
 const path = require("path");
-// const router = require("express").Router();
+const Op = db.Sequelize.Op;
+
 
 module.exports = function(app) {
     /* CUSTOMER ROUTES */
@@ -10,9 +11,9 @@ module.exports = function(app) {
  
  
     /* LOT ROUTES */
-    // RETURNS LIST OF LOTS
+    // list all lots
     app.get("/api/lots", (req, res) => {
-        console.log("in API method lot");
+        console.log("in API get findall lot");
         db.Lot.findAll()
         .then((result) => {
             console.log(result);
@@ -22,6 +23,80 @@ module.exports = function(app) {
             res.json({error: err});
         });
     });
+    //save lot
+    app.post("/api/lots", (req, res) => {
+        console.log("in API post add lot");
+        db.Lot.create(req.body).then(
+            (result) => {
+                console.log(result);
+                res.json({result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });
+    // delete lot
+    console.log("in API delete lot");
+    app.delete("/api/lot/:id", (req, res) => {
+        const lot_id = req.params.id;
+        db.Lot.destroy({
+            where:{
+                id: lot_id
+            } 
+        })
+        .then(
+            (result) => {
+                res.json({successful: result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });  
+    //find one LOT  
+    app.get("/api/lot/:id", function(req, res) {
+        const lot_id = req.body.id;
+        console.log("in API put update lot");
+
+        db.Lot.findAll({
+          where: {
+            id: lot_id
+          }
+        })
+        .then((result) => {
+          res.json(result);
+        })
+        .catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    //UPDATE LOT  
+    app.put("/api/lot/", function(req, res) {
+        console.log("in API put update lot");
+
+        db.Lot.update({
+          count: req.body.count,
+          cost: req.body.cost,
+          purchasedate: req.body.purchasedate,
+          color: req.body.color  
+        }, {
+          where: {
+            id: {[Op.eq]: req.body.id} 
+          }
+        }).then((result) => {
+          res.json(result);
+        }).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    
     //SEARCH
     // app.post("/search", (req, res) => {
     //     console.log("in api-routes");
@@ -33,9 +108,9 @@ module.exports = function(app) {
     //     axios.get(
     //         `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
     //     ).then(
-    //         (response) => {
-    //             console.log(response.data.items);
-    //             res.json(response.data.items);
+    //         (result) => {
+    //             console.log(result.data.items);
+    //             res.json(result.data.items);
     //         }
     //     )
     //     .catch(
@@ -44,33 +119,9 @@ module.exports = function(app) {
     //         }
     //     )
     // });
-    //SAVE BOOK
-    // app.post("/api/books", (req, res) => {
-    //     db.Book.create(req.body).then(
-    //         (response) => {
-    //             res.json({successful: response});
-    //         }
-    //     ).catch(
-    //         (err) => {
-    //             res.json({error: err});
-    //         }
-    //     );
-    // });
     //GET SAVED BOOKS
  
  
-    //DELETE BOOK
-    // app.delete("/api/books/:id", (req, res) => {
-    //     db.Book.findByIdAndDelete(req.params.id).then(
-    //         (response) => {
-    //             res.json({successful: response});
-    //         }
-    //     ).catch(
-    //         (err) => {
-    //             res.json({error: err});
-    //         }
-    //     );
-    // });    
 
 
     /* USER ROUTES */
