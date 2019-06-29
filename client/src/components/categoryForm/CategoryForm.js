@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Input, FormBtn, FormRow } from '../form tools/form';
+import { Input, FormBtn,  FormRow, FormContainer } from '../form tools/form';
 
 class CategoryForm extends Component {
   render() {
     return (
-      <div id='add-category'>
+      <FormContainer id='add-category'>
         <h3>Item Category</h3>
         <form id='itemcategories'>
           <FormRow>
             <Input
               name='itemcategoriesInput'
-              colSpecs='form-group col-sm-4'
+              colSpecs='form-group col-md'
               placeholder='Enter Category'
               id='itemcategoriesInput'
               labelText='Enter item category:'
@@ -20,7 +20,7 @@ class CategoryForm extends Component {
             Submit
           </FormBtn>
         </form>
-      </div>
+      </FormContainer>
     );
   }
 }
