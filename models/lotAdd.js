@@ -1,33 +1,45 @@
+import React from "react"
+import axios from "axios"
 class LotsForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
           color: '',
-          count: 0,
+          count: '',
           datePurchased: '',
-          purchasePrice: 0,
+          purchasePrice: '',
           seller: '',
     };
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      // this.handleChange = this.handleChange.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handlesubmit=()=> {
+      console.log('about to save',this.state)
+      axios.post("https://localhost:3001/savelot",this.state).then(function(data){
+        console.log("from backend",data)
+      })
+
     }
   
-    handleChange(event) {
+    handleInputChange=(event)=> {
+      // console.log('what we typed',event.target.name,event.target.value)
         const target = event.target;
         const color = target.color;
         const count = target.count;
         const datePurchased = target.datePurchased;
         const purchasePrice = target.purchasePrice;
         const seller = target.seller;
-
-      this.setState({value: event.target.value});
+        const partOfState = event.target.name
+      this.setState({[partOfState]: event.target.value});
     }
   
     
       render() {
+        console.log('state',this.state)
       return (
-        <form onSubmit={this.handleSubmit}>
+        <div>
+        <form> 
           <label>
             color:
             <input
@@ -36,34 +48,37 @@ class LotsForm extends React.Component {
              value={this.state.color} 
              onChange={this.handleInputChange} />
           </label>
-          <input type="submit" value="Submit" />
-          <br />
+           <br />
           count:
           <input
           name="count"
           type="text"
           value={this.state.count}
-          onchange={this.handleInputCHange} />
+          onChange={this.handleInputChange} />
           date Purchased:
           <input
-          name="date purchased"
+          name="datePurchased"
           type="text"
           value={this.state.datePurchased}
-          onchange={this.handleInputCHange} />
+          onChange={this.handleInputChange} />
           purchase price:
           <input
-          name="purchase price"
+          name="purchasePrice"
           type="number"
           value={this.state.purchasePrice}
-          onchange={this.handleInputCHange} />
+          onChange={this.handleInputChange} />
           seller:
           <input
           name="seller"
           type="text"
           value={this.state.seller}
-          onchange={this.handleSubmit} />
+         onChange={this.handleInputChange} 
+          />
 
         </form>
+        <button onClick={this.handlesubmit}>save</button>
+        </div>
       );
     }
   }
+  export default LotsForm
