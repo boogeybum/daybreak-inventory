@@ -52,7 +52,7 @@ class CustomerForm extends Component {
                     <FormRow>
                         <Input name="firstName" colSpecs="form-group col-sm-4" placeholder="First Name (required)" id="title" labelText="First name" value={this.state.firstName}
                             onChange={this.handleInputChange} />
-                        <Input name="last-name" placeholder="Last Name (required)" colSpecs="form-group col-sm-4" id="last-name" labelText="Last name" value={this.state.lastName}
+                        <Input name="lastName" placeholder="Last Name (required)" colSpecs="form-group col-sm-4" id="last-name" labelText="Last name" value={this.state.lastName}
                             onChange={this.handleInputChange} />
                         <Input name="email" placeholder="enter email" colSpecs="form-group col-sm-4" id="email" labelText="Email" type="email" value={this.state.email}
                             onChange={this.handleInputChange} />
