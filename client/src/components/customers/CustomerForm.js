@@ -9,7 +9,7 @@ class CustomerForm extends Component {
         lastName: "",
         email: "",
         address: "",
-        notes: ""
+        note: ""
     };
 
     saveCustomer = (customerData) => {
@@ -35,7 +35,7 @@ class CustomerForm extends Component {
                 lastName: this.state.lastName,
                 email: this.state.email,
                 address: this.state.address,
-                note: this.state.notes
+                notes: this.state.note
             })
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
