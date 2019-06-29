@@ -81,4 +81,4 @@ class LotsForm extends React.Component {
       );
     }
   }
-  export default LotsForm
+  export default LotForm
