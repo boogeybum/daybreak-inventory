@@ -4,7 +4,7 @@ import CategoryForm from "../components/categoryForm/CategoryForm";
 import CategoryResults from "../components/categoryForm/CategoryResults";
 import API from '../utils/API';
 
-class itemcategoriesForm extends Component {
+class ItemCategoryForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,4 +49,4 @@ class itemcategoriesForm extends Component {
   }
 }
 
-export default itemcategoriesForm;
+export default ItemCategoryForm;

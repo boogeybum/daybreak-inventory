@@ -26,7 +26,7 @@
 .Navsidebar {
   background-color: #282c34;
   min-height: 5vh;
-  max-width: 30vh;
+  /* max-width: 30vh; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
