@@ -40,3 +40,19 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function FormContainer(props) {
+  return (
+        <div className="col-md-10">
+          {props.children}
+        </div>
+  );
+}
+
+export function NavContainer(props) {
+  return (
+        <div className="col-md-2">
+          {props.children}
+        </div>
+  )
+}
