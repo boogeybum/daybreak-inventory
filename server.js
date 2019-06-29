@@ -24,7 +24,7 @@ var _ITEMCATEGORY = require("./models/seedData/itemcategory.json");
 var _USERS = require("./models/seedData/users.json");
 var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

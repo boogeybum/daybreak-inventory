@@ -6,14 +6,14 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       allowNull: false
     },
-    firstName: {
+    firstname: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 25]
       }
     },
-    lastName: {
+    lastname: {
       type: DataTypes.STRING,
       validate: {
         len: [1, 25]
@@ -32,8 +32,11 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 100]
       }
     },
-    notes: {
-      type: DataTypes.STRING
+    phone: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [1, 25]
+      }
     }
   });
 
