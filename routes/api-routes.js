@@ -12,7 +12,7 @@ module.exports = function(app) {
  
     /* LOT ROUTES */
     // list all lots
-    app.get("/api/lots", (req, res) => {
+    app.get("/api/lot", (req, res) => {
         console.log("in API get findall lot");
         db.Lot.findAll()
         .then((result) => {
@@ -23,8 +23,8 @@ module.exports = function(app) {
             res.json({error: err});
         });
     });
-    //save lot
-    app.post("/api/lots", (req, res) => {
+    //create new lot
+    app.post("/api/lot", (req, res) => {
         console.log("in API post add lot");
         db.Lot.create(req.body).then(
             (result) => {
@@ -58,7 +58,7 @@ module.exports = function(app) {
     });  
     //find one LOT  
     app.get("/api/lot/:id", function(req, res) {
-        const lot_id = req.body.id;
+        const lot_id = req.params.id;
         console.log("in API put update lot");
 
         db.Lot.findAll({
@@ -97,32 +97,6 @@ module.exports = function(app) {
         );
       });
     
-    //SEARCH
-    // app.post("/search", (req, res) => {
-    //     console.log("in api-routes");
-    //     //replace spaces with (+) in the title
-    //      console.log(req.body);
-    //     // console.log(req.body.title);
-    //     let bookTitle = req.body.title.replace(/\s/g,"+");
-    //     console.log(bookTitle);
-    //     axios.get(
-    //         `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
-    //     ).then(
-    //         (result) => {
-    //             console.log(result.data.items);
-    //             res.json(result.data.items);
-    //         }
-    //     )
-    //     .catch(
-    //         (error) => {
-    //             res.json({error: error});
-    //         }
-    //     )
-    // });
-    //GET SAVED BOOKS
- 
- 
-
 
     /* USER ROUTES */
 
@@ -132,11 +106,9 @@ module.exports = function(app) {
     app.get("/api/inventoryitems", (req, res) => {
         db.Inventoryitem.findAll(
             {
-            include: [
-                db.Itemcategory,db.Lot
-              ]
+            include: [db.Itemcategory,db.Lot]
             }
-            )
+        )
         .then((result) => {
             console.log(result);
             res.json(result);
@@ -149,6 +121,7 @@ module.exports = function(app) {
 
 
     /* ITEM CATEGORY ROUTES */
+    //list all item category
     app.get("/api/itemcategory", (req, res) => {
         db.Itemcategory.findAll()
         .then((result) => {
@@ -160,6 +133,77 @@ module.exports = function(app) {
         });
     });
 
+     //create new itemcategory
+    app.post("/api/itemcategory", (req, res) => {
+        console.log("in API post add itemcategory");
+        db.Itemcategory.create(req.body).then(
+            (result) => {
+                console.log(result);
+                res.json({result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });
+    // delete itemcategory
+    console.log("in API delete itemcategory");
+    app.delete("/api/itemcategory/:id", (req, res) => {
+        const itemcategory_id = req.params.id;
+        db.Itemcategory.destroy({
+            where:{
+                id: itemcategory_id
+            } 
+        })
+        .then(
+            (result) => {
+                res.json({successful: result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });  
+    //find one itemcategory  
+    app.get("/api/itemcategory/:id", function(req, res) {
+        const itemcategory_id = req.params.id;
+        console.log("in API find one itemcategory");
+
+        db.Itemcategory.findAll({
+          where: {
+            id: itemcategory_id
+          }
+        })
+        .then((result) => {
+          res.json(result);
+        })
+        .catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    //UPDATE itemcategory  
+    app.put("/api/itemcategory/", function(req, res) {
+        console.log("in API put update itemcategory");
+
+        db.Itemcategory.update({
+          count: req.body.description
+        }, {
+          where: {
+            id: {[Op.eq]: req.body.id} 
+          }
+        }).then((result) => {
+          res.json(result);
+        }).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    
 
 
 
