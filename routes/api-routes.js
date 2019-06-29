@@ -7,6 +7,92 @@ const Op = db.Sequelize.Op;
 
 module.exports = function(app) {
     /* CUSTOMER ROUTES */
+    // list all customer
+    app.get("/api/customer", (req, res) => {
+        console.log("in API get findall customer");
+        db.Customer.findAll()
+        .then((result) => {
+            console.log(result);
+            res.json(result);
+        })
+        .catch((err) => {
+            res.json({error: err});
+        });
+    });
+    //create new customer
+    app.post("/api/customer", (req, res) => {
+        console.log("in API post add customer");
+        db.Customer.create(req.body).then(
+            (result) => {
+                console.log(result);
+                res.json({result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });
+    // delete customer
+    console.log("in API delete customer");
+    app.delete("/api/customer/:id", (req, res) => {
+        const customer_id = req.params.id;
+        db.Customer.destroy({
+            where:{
+                id: customer_id
+            } 
+        })
+        .then(
+            (result) => {
+                res.json({successful: result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });  
+    //find one customer  
+    app.get("/api/customer/:id", function(req, res) {
+        const customer_id = req.params.id;
+        console.log("in API put update customer");
+
+        db.Customer.findAll({
+          where: {
+            id: customer_id
+          }
+        })
+        .then((result) => {
+          res.json(result);
+        })
+        .catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    //UPDATE customer  
+    app.put("/api/customer/", function(req, res) {
+        console.log("in API put update customer");
+
+        db.Customer.update({
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          email: req.body.email,
+          address: req.body.address,
+          phone: req.body.phone  
+        }, {
+          where: {
+            id: {[Op.eq]: req.body.id} 
+          }
+        }).then((result) => {
+          res.json(result);
+        }).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
  
  
  
@@ -99,6 +185,92 @@ module.exports = function(app) {
     
 
     /* USER ROUTES */
+    //list all users
+    app.get("/api/user", (req, res) => {
+        db.User.findAll()
+        .then((result) => {
+            console.log(result);
+            res.json(result);
+        })
+        .catch((err) => {
+            res.json({error: err});
+        });
+    });
+
+     //create new user
+    app.post("/api/user", (req, res) => {
+        console.log("in API post add user");
+        db.User.create(req.body).then(
+            (result) => {
+                console.log(result);
+                res.json({result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });
+    // delete user
+    console.log("in API delete user");
+    app.delete("/api/user/:id", (req, res) => {
+        const user_id = req.params.id;
+        db.User.destroy({
+            where:{
+                userid: user_id
+            } 
+        })
+        .then(
+            (result) => {
+                res.json({successful: result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });  
+    //find one user  
+    app.get("/api/user/:id", function(req, res) {
+        const user_id = req.params.id;
+        console.log("in API find one user");
+
+        db.User.findAll({
+          where: {
+            userid: user_id
+          }
+        })
+        .then((result) => {
+          res.json(result);
+        })
+        .catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    //UPDATE user  
+    app.put("/api/user/", function(req, res) {
+        console.log("in API put update user");
+
+        db.User.update({
+          userid: req.body.userid,
+          name: req.body.name,
+          email: req.body.email,
+          role: req.body.role,
+          password: req.body.password
+        }, {
+          where: {
+            userid: {[Op.eq]: req.body.userid} 
+          }
+        }).then((result) => {
+          res.json(result);
+        }).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
 
 
 
