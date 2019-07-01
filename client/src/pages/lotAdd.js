@@ -1,5 +1,7 @@
-import React from "react"
+import React, { Component } from 'react';
 import axios from "axios"
+import NameForm from "../components/LotForm/lot"
+
 class LotsForm extends React.Component {
     constructor(props) {
       super(props);
@@ -38,46 +40,10 @@ class LotsForm extends React.Component {
       render() {
         console.log('state',this.state)
       return (
-        <div>
-        <form> 
-          <label>
-            color:
-            <input
-            name="color"
-             type="text" 
-             value={this.state.color} 
-             onChange={this.handleInputChange} />
-          </label>
-           <br />
-          count:
-          <input
-          name="count"
-          type="text"
-          value={this.state.count}
-          onChange={this.handleInputChange} />
-          date Purchased:
-          <input
-          name="datePurchased"
-          type="text"
-          value={this.state.datePurchased}
-          onChange={this.handleInputChange} />
-          purchase price:
-          <input
-          name="purchasePrice"
-          type="number"
-          value={this.state.purchasePrice}
-          onChange={this.handleInputChange} />
-          seller:
-          <input
-          name="seller"
-          type="text"
-          value={this.state.seller}
-         onChange={this.handleInputChange} 
-          />
+       <main>
+        <NameForm handleInputChange={this.handleInputChange this.handlesubmitclick={this.handlesubmitclick}} />
 
-        </form>
-        <button onClick={this.handlesubmit}>save</button>
-        </div>
+       </main>
       );
     }
   }
