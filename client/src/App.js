@@ -1,46 +1,76 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-undef */
+// eslint-disable-next-line
 import React, { Component } from 'react';
+
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import LotsForm from "./components";
-import ItemCategoryForm from "./pages/itemCategoryForm";
-// import InventoryForm from "./components";
-// import UsersForm from "./components";
-import CustomerForm from "./components/customers/CustomerForm";
-// import CheckoutForm from "./components";
-// import { FormBtn } from "./components/form tools/form";
-import Header from "./components/navigation/Header";
-import Nav from "./components/navigation/Nav";
 
 class App extends Component {
+  
   render() {
+    
     return (
-      <Router>
-        <div className="container-flex">
-          <Header />
-          <div className="row">
-          <Nav />
-          <Switch>
-            {/* <Route exact path="/lots" component={LotsForm}/> */}
-            <Route exact path="/itemcategories" component={ItemCategoryForm}/>
-            {/* <Route exact path="/inventory" component={InventoryForm}/> */}
-            {/* <Route exact path="/users" component={UsersForm}/> */}
-            <Route exact path="/customers" component={CustomerForm}/>
-            {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
-          </Switch>
+
+      <div className="App">
+      <div className="App__Aside"></div>
+      <div className="App__Form">
+      <div className="PageSwitcher">
+          <a href="#" className="PageSwitcher__Item">Sign In</a>
+          <a href="#" className="PageSwitcher__Item PageSwitcher__Item--Active">Sign Up</a>
           </div>
-          {/* <div id ="App">
-            <FormBtn data-toggle = "collapse" data-target = "#add-customer" type = "button" style = {{borderBottom: "solid", borderColor: "green"}}>Add Customer <span style = {{paddingLeft: "10px"}}>+</span></FormBtn>
-            <CustomerForm />
-            <br></br>
-            
-            <FormBtn data-toggle = "collapse" data-target = "#add-category" type = "button" style = {{borderBottom: "solid", borderColor: "green"}}>Add Item Category <span style = {{paddingLeft: "10px"}}>+</span></FormBtn>
-            <CategoryForm />
-            <br></br> 
-          </div> */}
+
+          
+          <div className="FormTitle">  
+          <a href="#" className="FormTitle__Link">Sign In</a> or <a href="#" 
+            className="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</a>
         </div>
-      </Router>
+
+
+
+        <div className="FormCenter">
+          <form className="FormFields" onSubmit={this.handleSubmit}>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="name">Full Name</label>
+              <input type="text" id="name" className="FormField__Input" 
+              placeholder="Enter you full name" name="name" />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="password">Password</label>
+              <input type="password" id="password" className="FormField__Input" 
+              placeholder="Enter your password" name="password" />
+            </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
+              <input type="email" id="email" className="FormField__Input" 
+              placeholder="Enter your email" name="email" />
+            </div>
+
+
+            <div className="FormField">
+          <label className="FormField___CheckboxLabel">
+            <input className="FormField__Checkbox" type="checkbox" name="hasAgreed" /> I agreed all 
+            statments in <a href="" className="FormField___TermsLink"> terms of service</a>
+          </label>
+
+            </div>
+          
+           <div className="FormField">
+            <button className="FormField__Button mr-20">Sign Up</button> <a href="#"
+            className="FormField__Link">I'm already a member</a>
+          </div>
+          
+        </form>
+    
+
+        </div>
+
+        
+        </div>
+
+      </div>
+    
     );
   }
-}
-
+}   
 export default App;
