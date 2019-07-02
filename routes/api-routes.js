@@ -199,7 +199,7 @@ module.exports = function(app) {
 
      //create new user
     app.post("/api/user", (req, res) => {
-        console.log("in API post add user");
+        console.log("in API post add user",req.body);
         db.User.create(req.body).then(
             (result) => {
                 console.log(result);
