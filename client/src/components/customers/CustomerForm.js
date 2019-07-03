@@ -97,8 +97,8 @@ class CustomerForm extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.customers.map(customer =>(
-                            <tr>
+                        {this.state.customers.map((customer,index) =>(
+                            <tr key={index}>
                                 <th scope="row">{customer.id}</th>
                                 <td>{customer.firstname}</td>
                                 <td>{customer.lastname}</td>
