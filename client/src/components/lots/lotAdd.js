@@ -61,6 +61,7 @@ class LotsForm extends Component {
         // console.log(this.state.lots)
         return (
             <div className="container lot">
+                <h3 className="display-4">Lots</h3>
                 {/* button that toggles a form to add a new lot */}
                 <FormBtn data-toggle="collapse" data-target="#add-lot" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Lot <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 

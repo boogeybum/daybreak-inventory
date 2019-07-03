@@ -61,6 +61,7 @@ class UserForm extends Component {
     render() {
         return (
             <div className="container Users">
+                <h3 className="display-4">Users</h3>
                 {/* button that toggles a form to add a new customer */}
                 <FormBtn data-toggle="collapse" data-target="#add-user" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add User <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 
@@ -71,19 +72,19 @@ class UserForm extends Component {
                 >
                     <form>
                         <FormRow>
-                            <Input name="userid" colSpecs="form-group col-md-3" placeholder="userid (required)" id="title" labelText="User id" value={this.state.userid}
+                            <Input name="userid" colspecs="form-group col-md-3" placeholder="userid (required)" id="title" labeltext="User id" value={this.state.userid}
                                 onChange={this.handleInputChange} />
-                            <Input name="name" placeholder="Name (required)" colSpecs="form-group col-md-3" id="name" labelText="Name" value={this.state.name}
+                            <Input name="name" placeholder="Name (required)" colspecs="form-group col-md-3" id="name" labeltext="Name" value={this.state.name}
                                 onChange={this.handleInputChange} />
-                            <Input name="role" placeholder="role (required)" colSpecs="form-group col-md-3" id="role" labelText="Role" value={this.state.role}
+                            <Input name="role" placeholder="role (required)" colspecs="form-group col-md-3" id="role" labeltext="Role" value={this.state.role}
                                 onChange={this.handleInputChange} />
                                </FormRow>
-                               <Input name="email" placeholder="email(required)" colSpecs="form-group col-md-3" id="email" labelText="Email" value={this.state.email}
+                               <Input name="email" placeholder="email(required)" colspecs="form-group col-md-3" id="email" labeltext="Email" value={this.state.email}
                             onChange={this.handleInputChange} />
-                            <Input name="password" placeholder="password(required)" colSpecs="form-group col-md-3" id="email" labelText="Password" value={this.state.password}
+                            <Input name="password" placeholder="password(required)" colspecs="form-group col-md-3" id="email" labeltext="Password" value={this.state.password}
                             onChange={this.handleInputChange} />
 
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                       
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>

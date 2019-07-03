@@ -18,11 +18,11 @@ class CategoryForm extends Component {
               colSpecs='form-group col-md'
               placeholder='Enter Category'
               id='itemcategoriesInput'
-              labelText='Enter item category:'
+              labeltext='Enter item category:'
               // onChange={(e) => props.handleChange(e)}
               />
           </FormRow>
-          <FormBtn type='submit' btnDetails={'btn btn-success'} labelText='Submit'
+          <FormBtn type='submit' btnDetails={'btn btn-success'} labeltext='Submit'
           // disabled={!(this.state.itemcategoriesInput)}
           // onClick={(this.handleSubmitClick)}
           // onClick={(e) => props.handleSubmitClick(e)}

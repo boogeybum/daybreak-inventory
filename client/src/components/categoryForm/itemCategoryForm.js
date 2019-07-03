@@ -61,13 +61,13 @@ class ItemCategoryForm extends Component {
                 >
                     <form id="itemcategories">
                         <FormRow>
-                        <Input name='itemcategory' placeholder='Item Category (required)' colSpecs='form-group col-sm-4'
-                        id='item-category' labelText='Enter item category' value={this.state.description}
+                        <Input name='itemcategory' placeholder='Item Category (required)' colspecs='form-group col-sm-4'
+                        id='item-category' labeltext='Enter item category' value={this.state.description}
                           onChange={this.handleInputChange} />
                         
                             
                         </FormRow>
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                             disabled={!(this.state.description)}
                             onClick={this.handleSubmitClick}>Submit</FormBtn>
                     </form>

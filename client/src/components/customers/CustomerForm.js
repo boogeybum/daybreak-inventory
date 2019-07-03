@@ -58,6 +58,7 @@ class CustomerForm extends Component {
     render() {
         return (
             <div className="container customer">
+                <h3 className="display-4">Customers</h3>
                 {/* button that toggles a form to add a new customer */}
                 <FormBtn data-toggle="collapse" data-target="#add-customer" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Customer <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 
@@ -68,18 +69,18 @@ class CustomerForm extends Component {
                 >
                     <form>
                         <FormRow>
-                            <Input name="firstname" colSpecs="form-group col-sm-4" placeholder="First Name (required)" id="title" labelText="First name" value={this.state.firstname}
+                            <Input name="firstname" colspecs="form-group col-sm-4" placeholder="First Name (required)" id="title" labeltext="First name" value={this.state.firstname}
                                 onChange={this.handleInputChange} />
-                            <Input name="lastname" placeholder="Last Name (required)" colSpecs="form-group col-sm-4" id="last-name" labelText="Last name" value={this.state.lastname}
+                            <Input name="lastname" placeholder="Last Name (required)" colspecs="form-group col-sm-4" id="last-name" labeltext="Last name" value={this.state.lastname}
                                 onChange={this.handleInputChange} />
-                            <Input name="email" placeholder="enter email" colSpecs="form-group col-sm-4" id="email" labelText="Email" type="email" value={this.state.email}
+                            <Input name="email" placeholder="enter email" colspecs="form-group col-sm-4" id="email" labeltext="Email" type="email" value={this.state.email}
                                 onChange={this.handleInputChange} />
                         </FormRow>
-                        <Input name="address" placeholder="Street, City, State, Country (required)" colSpecs="form-group col-sm-12" id="address" labelText="Address" value={this.state.address}
+                        <Input name="address" placeholder="Street, City, State, Country (required)" colspecs="form-group col-sm-12" id="address" labeltext="Address" value={this.state.address}
                             onChange={this.handleInputChange} />
-                        <Input name="phone" placeholder="phone (required)" colSpecs="form-group col-sm-12" id="phone" labelText="phone" value={this.state.phone}
+                        <Input name="phone" placeholder="phone (required)" colspecs="form-group col-sm-12" id="phone" labeltext="phone" value={this.state.phone}
                             onChange={this.handleInputChange} />
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                             disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.address)}
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>
