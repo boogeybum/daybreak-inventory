@@ -61,7 +61,7 @@ class ItemCategoryForm extends Component {
                 >
                     <form id="itemcategories">
                         <FormRow>
-                        <Input name='itemcategory' placeholder='Item Category (required)' colspecs='form-group col-sm-4'
+                        <Input name='description' placeholder='Item Category (required)' colspecs='form-group col-sm-4'
                         id='item-category' labeltext='Enter item category' value={this.state.description}
                           onChange={this.handleInputChange} />
                         
