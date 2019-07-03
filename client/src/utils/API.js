@@ -20,20 +20,30 @@ export default {
   // getCustomers: () => {
   //   return axios.get("api/customers");
   // }
-saveLots: function (lotData) {
-  return axios.post("/api/lot", lotData);
-},
+  saveLots: function (lotData) {
+    return axios.post("/api/lot", lotData);
+  },
 
-getLots: () => {
-  return axios.get("/api/lot");
-},
+  getLots: () => {
+    return axios.get("/api/lot");
+  },
 
-saveUser: function (userData) {
-  return axios.post("/api/user", userData);
-},
+  saveUser: function (userData) {
+    return axios.post("/api/user", userData);
+  },
 
-getUser: () => {
-  return axios.get("/api/user");
-}
+  getUser: () => {
+    return axios.get("/api/user");
+  },
+
+  getInventoryitems: () => {
+    return axios.get("api/inventoryitem");
+  },
+  addInventoryitem: (data) => {
+    return axios.post("api/inventoryitem", data);
+  },
+  saveInventoryitem: (data) => {
+    return axios.put("api/inventoryitem", data);
+  }
 
 }

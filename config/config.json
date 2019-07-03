@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "lily1chloe2",
+    "password": "",
     "database": "daybreak_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "lily1chloe2",
+    "password": "",
     "database": "daybreak_testdb",
     "host": "localhost",
     "dialect": "mysql",
