@@ -61,9 +61,9 @@ class ItemCategoryForm extends Component {
                 >
                     <form id="itemcategories">
                         <FormRow>
-                        <Input name='itemcategory' placeholder='Item Category (required)' colSpecs='form-group col-md'
+                        <Input name='itemcategory' placeholder='Item Category (required)' colSpecs='form-group col-sm-4'
                         id='item-category' labelText='Enter item category' value={this.state.description}
-                          onChange={this.handleChange} />
+                          onChange={this.handleInputChange} />
                         
                             
                         </FormRow>
@@ -82,8 +82,8 @@ class ItemCategoryForm extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.itemCategories.map(itemCategory =>(
-                            <tr>
+                        {this.state.itemCategories.map((itemCategory, index) =>(
+                            <tr key={index}>
                                 <th scope="row">{itemCategory.id}</th>
                                 <td>{itemCategory.description}</td>
                             </tr>
