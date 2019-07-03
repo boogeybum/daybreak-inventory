@@ -12,11 +12,28 @@ export default {
   // API to get customers
   getCustomers: () => {
     return axios.get("api/customer");
-  }
+  },
+
   // addCategoryToDB: (itemcategoriesData) => {
   //   return axios.post("/api/Itemcategory", itemcategoriesData);
   // }
   // getCustomers: () => {
   //   return axios.get("api/customers");
   // }
+saveLots: function (lotData) {
+  return axios.post("/api/lot", lotData);
+},
+
+getLots: () => {
+  return axios.get("/api/lot");
+},
+
+saveUser: function (userData) {
+  return axios.post("/api/user", userData);
+},
+
+getUser: () => {
+  return axios.get("/api/user");
+}
+
 }

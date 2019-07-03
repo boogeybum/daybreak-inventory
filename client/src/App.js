@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import LotsForm from "./components";
+import LotsForm from "./components/lots/lotAdd";
 import ItemCategoryForm from "./pages/itemCategoryForm";
 // import InventoryForm from "./components";
-// import UsersForm from "./components";
-import CustomerForm from "./components/customers/CustomerForm";
+import UserForm from "./components/userForm/addUser";
+import CustomerForm from "./components/customers/customerform";
 // import CheckoutForm from "./components";
 // import { FormBtn } from "./components/form tools/form";
 import Header from "./components/navigation/Header";
@@ -20,10 +20,10 @@ class App extends Component {
           <div className="row">
           <Nav />
           <Switch>
-            {/* <Route exact path="/lots" component={LotsForm}/> */}
+            <Route exact path="/lots" component={LotsForm}/>
             <Route exact path="/itemcategories" component={ItemCategoryForm}/>
             {/* <Route exact path="/inventory" component={InventoryForm}/> */}
-            {/* <Route exact path="/users" component={UsersForm}/> */}
+            <Route exact path="/users" component={UserForm}/>
             <Route exact path="/customers" component={CustomerForm}/>
             {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
           </Switch>
