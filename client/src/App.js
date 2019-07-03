@@ -6,6 +6,7 @@ import ItemCategoryForm from "./pages/itemCategoryForm";
 // import InventoryForm from "./components";
 import UserForm from "./components/userForm/addUser";
 import CustomerForm from "./components/customers/CustomerForm";
+import InventoryItemForm from "./components/inventoryitem/InventoryItemForm";
 // import CheckoutForm from "./components";
 // import { FormBtn } from "./components/form tools/form";
 import Header from "./components/navigation/Header";
@@ -25,6 +26,7 @@ class App extends Component {
             {/* <Route exact path="/inventory" component={InventoryForm}/> */}
             <Route exact path="/users" component={UserForm}/>
             <Route exact path="/customers" component={CustomerForm}/>
+            <Route exact path="/inventoryitems" component={InventoryItemForm}/>
             {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
           </Switch>
           </div>
