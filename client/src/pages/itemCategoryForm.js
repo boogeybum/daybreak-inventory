@@ -8,8 +8,8 @@ class ItemCategoryForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemcategoriesInput: '',
-      itemcategoriesData: ''
+      itemCategoryInput: '',
+      itemCategoryData: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,19 +21,19 @@ class ItemCategoryForm extends Component {
     // const target = event.target;
     // const itemcategories = target.itemcategories;
 
-    this.setState({ itemcategoriesInput : event.target.value });
-    console.log(`item category input is ${this.state.itemcategoriesInput}`);
-    console.log(`item category data is ${this.state.itemcategoriesData}`);
+    this.setState({ itemCategoryInput : event.target.value });
+    console.log(`item category input is ${this.state.itemCategoryInput}`);
+    console.log(`item category data is ${this.state.itemCategoryData}`);
 
   }
 
   handleSubmitClick(event) {
     event.preventDefault();
-    API.addCategoryToDB(this.state.itemcategoriesInput)
+    API.addCategoryToDB(this.state.itemCategoryInput)
     .then(
       (response) => {
-        this.setState({ itemcategoriesData: response.data });
-        this.setState({ itemcategoriesInput: "" });
+        this.setState({ itemCategoryData: response.data });
+        this.setState({ itemCategoryInput: "" });
   });
   }
 
@@ -41,8 +41,8 @@ class ItemCategoryForm extends Component {
     return (
       <main>
         <CategoryForm handleChange={this.handleChange} handleSubmitClick={this.handleSubmitClick} />
-        {(this.state.itemcategoriesData.length > 0)?
-          <CategoryResults itemcategoriesData={this.state.itemcategoriesData} path={this.props.match.path}/> : null
+        {(this.state.itemCategoryData.length > 0)?
+          <CategoryResults itemCategoryData={this.state.itemCategoryData} path={this.props.match.path}/> : null
         }
       </main>
     );
