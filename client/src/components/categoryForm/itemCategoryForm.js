@@ -50,9 +50,10 @@ class ItemCategoryForm extends Component {
     render() {
         return (
             <div className="container categories">
+                <h3 className="display-4">Item Category</h3>
                 {/* button that toggles a form to add a new category */}
                 <FormBtn data-toggle="collapse" data-target="#add-category" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Category <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
-
+                
                 {/* form to add a new category */}
                 <div
                     id="add-category"
@@ -71,9 +72,10 @@ class ItemCategoryForm extends Component {
                             onClick={this.handleSubmitClick}>Submit</FormBtn>
                     </form>
                 </div>
+                
                 {/* Table for existing itemCategories in the database */}
-                <table className="table">
-                    <thead>
+                <table className="table table-striped">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Description</th>
