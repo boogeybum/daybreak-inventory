@@ -5,7 +5,7 @@ import LotsForm from "./components/lots/lotAdd";
 import ItemCategoryForm from "./pages/itemCategoryForm";
 // import InventoryForm from "./components";
 import UserForm from "./components/userForm/addUser";
-import CustomerForm from "./components/customers/customerform";
+import CustomerForm from "./components/customers/CustomerForm";
 // import CheckoutForm from "./components";
 // import { FormBtn } from "./components/form tools/form";
 import Header from "./components/navigation/Header";
