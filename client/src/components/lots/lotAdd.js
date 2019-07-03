@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import { Input, TextArea, FormBtn, FormRow } from "../form tools/form";
+import { Input, FormBtn, FormRow } from "../form tools/form";
 import API from "../../utils/API";
 
 
@@ -62,7 +61,7 @@ class LotsForm extends Component {
         }
     };
     render() {
-        console.log(this.state.lots)
+        // console.log(this.state.lots)
         return (
             <div className="container lot">
                 {/* button that toggles a form to add a new lot */}
@@ -75,18 +74,18 @@ class LotsForm extends Component {
                 >
                     <form>
                         <FormRow>
-                            <Input name="color" colSpecs="form-group col-sm-4" placeholder="Color (required)" id="title" labelText="Color" value={this.state.color}
+                            <Input name="color" colspecs="form-group col-sm-4" placeholder="Color (required)" id="title" labeltext="Color" value={this.state.color}
                                 onChange={this.handleInputChange} />
-                            <Input name="count" placeholder="count (required)" colSpecs="form-group col-sm-4" id="count" labelText="count" value={this.state.count}
+                            <Input name="count" placeholder="count (required)" colspecs="form-group col-sm-4" id="count" labeltext="count" value={this.state.count}
                                 onChange={this.handleInputChange} />
-                            <Input name="datePurchased" placeholder="date purchased (required)" colSpecs="form-group col-sm-4" id="date purchased" labelText="date purchased" value={this.state.datePurchased}
+                            <Input name="datePurchased" placeholder="date purchased (required)" colspecs="form-group col-sm-4" id="date purchased" labeltext="date purchased" value={this.state.datePurchased}
                                 onChange={this.handleInputChange} />
                         </FormRow>
-                        <Input name="purchasePrice" placeholder="purchase price(required)" colSpecs="form-group col-sm-6" id="purchase price" labelText="purchase price" value={this.state.purchasePrice}
+                        <Input name="purchasePrice" placeholder="purchase price(required)" colspecs="form-group col-sm-6" id="purchase price" labeltext="purchase price" value={this.state.purchasePrice}
                             onChange={this.handleInputChange} />
-                        <Input name="seller" placeholder="seller(required)" colSpecs="form-group col-sm-6" id="seller" labelText="seller" value={this.state.seller}
+                        <Input name="seller" placeholder="seller(required)" colspecs="form-group col-sm-6" id="seller" labeltext="seller" value={this.state.seller}
                             onChange={this.handleInputChange} />
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                            
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>
@@ -104,8 +103,8 @@ class LotsForm extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.lots.map(lots =>(
-                            <tr>
+                        {this.state.lots.map((lots,index) =>(
+                            <tr key={index}>
                                 <th scope="row">{lots.id}</th>
                                 <td>{lots.color}</td>
                                 <td>{lots.count}</td>

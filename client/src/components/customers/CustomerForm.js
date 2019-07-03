@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, TextArea, FormBtn, FormRow } from "../form tools/form";
+import { Input, FormBtn, FormRow } from "../form tools/form";
 import API from "../../utils/API";
 
 class CustomerForm extends Component {
@@ -97,8 +97,8 @@ class CustomerForm extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.customers.map(customer =>(
-                            <tr>
+                        {this.state.customers.map((customer,index) =>(
+                            <tr key={index}>
                                 <th scope="row">{customer.id}</th>
                                 <td>{customer.firstname}</td>
                                 <td>{customer.lastname}</td>
