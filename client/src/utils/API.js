@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   // This API gets item categories currently saved to the DB
-  getitemcategories: () => {
+  getItemCategories: () => {
     return axios.get("/api/itemcategory");
   },
   // This API writes new item categories to the DB
