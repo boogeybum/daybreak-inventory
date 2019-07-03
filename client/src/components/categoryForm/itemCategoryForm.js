@@ -44,6 +44,9 @@ class ItemCategoryForm extends Component {
             })
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
+            this.setState({
+                description: ""
+            });
         }
     };
 
@@ -72,7 +75,7 @@ class ItemCategoryForm extends Component {
                             onClick={this.handleSubmitClick}>Submit</FormBtn>
                     </form>
                 </div>
-                
+                <p></p>
                 {/* Table for existing itemCategories in the database */}
                 <table className="table table-striped">
                     <thead className="thead-dark">
