@@ -275,7 +275,8 @@ module.exports = function(app) {
 
 
     /* INVENTORY ITEM ROUTES */
-    app.get("/api/inventoryitems", (req, res) => {
+    //list all inventoryitems
+    app.get("/api/inventoryitem", (req, res) => {
         db.Inventoryitem.findAll(
             {
             include: [db.Itemcategory,db.Lot]
@@ -289,6 +290,94 @@ module.exports = function(app) {
             res.json({error: err});
         });
     });
+
+    //create new inventoryitems
+    app.post("/api/inventoryitem", (req, res) => {
+        console.log("in API post add inventoryitem",req.body);
+        db.Inventoryitem.create(req.body).then(
+            (result) => {
+                console.log(result);
+                res.json({result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });
+    // delete inventoryitem
+    console.log("in API delete inventoryitem");
+    app.delete("/api/inventoryitem/:id", (req, res) => {
+        const inventoryitem_id = req.params.id;
+        db.Inventoryitem.destroy({
+            where:{
+                id: inventoryitem_id
+            } 
+        })
+        .then(
+            (result) => {
+                res.json({successful: result});
+            }
+        ).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+    });  
+    //find one inventoryitem  
+    app.get("/api/inventoryitem/:id", function(req, res) {
+        const inventoryitem_id = req.params.id;
+        console.log("in API find one inventoryitem");
+
+        db.Inventoryitem.findAll({
+          where: {
+            id: inventoryitem_id
+          }
+        })
+        .then((result) => {
+          res.json(result);
+        })
+        .catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+    //UPDATE inventoryitem  
+    app.put("/api/inventoryitem/", function(req, res) {
+        console.log("in API put update inventoryitem");
+
+        db.Inventoryitem.update({
+          id: req.body.id,
+          totalinstock: req.body.totalinstock,
+          totalsales: req.body.totalsales,
+          price: req.body.price,
+          LotId: req.body.LotId,
+          ItemcategoryId: req.body.ItemcategoryId,
+          PricerangeId: req.body.PricerangeId,
+        }, {
+          where: {
+            id: {[Op.eq]: req.body.id} 
+          }
+        }).then((result) => {
+          res.json(result);
+        }).catch(
+            (err) => {
+                res.json({error: err});
+            }
+        );
+      });
+
+
+
+
+
+
+
+
+
+
+
 
 
 

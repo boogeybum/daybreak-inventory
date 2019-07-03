@@ -12,7 +12,7 @@ export function FormRow (props) {
 export function Input(props) {
   return (
     <div className= {props.colSpecs ? props.colSpecs: "form-group"} {...props}>
-      <label for = {props.id}>{props.labelText}</label>
+      <label forhtml = {props.id}>{props.labelText}</label>
       <input className="form-control" {...props} />
     </div>
   );
