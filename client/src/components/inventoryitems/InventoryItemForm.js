@@ -58,6 +58,7 @@ class InventoryitemForm extends Component {
     render() {
         return (
             <div className="container inventoryitem">
+                <h3 className="display-4">Inventory Items</h3>
                 {/* button that toggles a form to add a new inventoryitem */}
                 <FormBtn data-toggle="collapse" data-target="#add-inventoryitem" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Item Category <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 
@@ -68,13 +69,13 @@ class InventoryitemForm extends Component {
                 >
                     <form>
                         <FormRow>
-                            <Input name="totalinstock" colSpecs="form-group col-sm-4" placeholder="Total in Stock (required)" id="total" labelText="Total in Stock" value={this.state.totalinstock}
+                            <Input name="totalinstock" colSpecs="form-group col-sm-4" placeholder="Total in Stock (required)" id="total" labeltext="Total in Stock" value={this.state.totalinstock}
                                 onChange={this.handleInputChange} />
-                            <Input name="totalsales" placeholder="Total Sales (required)" colSpecs="form-group col-sm-4" id="last-name" labelText="Total Sales" value={this.state.totalsales} disabled="true" />
-                            <Input name="price" placeholder="Enter Price" colSpecs="form-group col-sm-4" id="price" labelText="Price" type="price" value={this.state.price}
+                            <Input name="totalsales" placeholder="Total Sales (required)" colSpecs="form-group col-sm-4" id="last-name" labeltext="Total Sales" value={this.state.totalsales} disabled="true" />
+                            <Input name="price" placeholder="Enter Price" colSpecs="form-group col-sm-4" id="price" labeltext="Price" type="price" value={this.state.price}
                                 onChange={this.handleInputChange} />
                         </FormRow>
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                             disabled={!(this.state.totalinstock && this.state.totalsales && this.state.price)}
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>

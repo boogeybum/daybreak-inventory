@@ -13,9 +13,6 @@ class LotsForm extends Component {
           purchasePrice: '',
           seller: '',
     };
-  
-      // this.handleChange = this.handleChange.bind(this);
-      // this.handleSubmit = this.handleSubmit.bind(this);
     
     componentDidMount() {
         this.loadLots();
@@ -64,6 +61,7 @@ class LotsForm extends Component {
         // console.log(this.state.lots)
         return (
             <div className="container lot">
+                <h3 className="display-4">Lots</h3>
                 {/* button that toggles a form to add a new lot */}
                 <FormBtn data-toggle="collapse" data-target="#add-lot" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Lot <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 
@@ -116,36 +114,7 @@ class LotsForm extends Component {
                     </tbody>
                 </table>
 
-                {/* <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table> */}
+                
             </div>
         );
     }
