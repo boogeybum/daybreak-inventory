@@ -44,6 +44,15 @@ export default {
   },
   saveInventoryitem: (data) => {
     return axios.put("api/inventoryitem", data);
+  }, 
+  signup: function (userData) {
+    return axios.post("/api/signup", userData);
+  },
+  signin: function (userData) {
+    return axios.post("/api/login", userData);
+  },
+  logout: () => {
+    return axios.get("/logout");
   }
 
 }
