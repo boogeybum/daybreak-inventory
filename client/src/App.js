@@ -11,6 +11,8 @@ import InventoryItemForm from "./components/inventoryitem/InventoryItemForm";
 // import { FormBtn } from "./components/form tools/form";
 import Header from "./components/navigation/Header";
 import Nav from "./components/navigation/Nav";
+import Signup from "./components/signup/signup"
+import Dashboard from "./components/dashboard/Dashboard"
 
 class App extends Component {
   render() {
@@ -21,12 +23,16 @@ class App extends Component {
           <div className="row">
           <Nav />
           <Switch>
+            <Route exact path="/" component={Signup}/>
+            <Route exact path="/signup" component={Signup}/>
             <Route exact path="/lots" component={LotsForm}/>
             <Route exact path="/itemcategories" component={ItemCategoryForm}/>
-            {/* <Route exact path="/inventory" component={InventoryForm}/> */}
+            <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/users" component={UserForm}/>
             <Route exact path="/customers" component={CustomerForm}/>
             <Route exact path="/inventoryitems" component={InventoryItemForm}/>
+            
+            
             {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
           </Switch>
           </div>

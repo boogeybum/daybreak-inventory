@@ -1,0 +1,28 @@
+#home {
+
+    background-color: #66DAC7;
+    padding-left: "resaleReport-00-mainCover.jpg";
+    background-image: url("https://cf-assets-tup.thredup.com/resale_report/2019/resaleReport-00-mainCover.jpg");
+    background-blend-mode: exclusion;
+    height: 100%;
+    margin: auto;
+
+  }
+
+  #info {
+    font-weight: bold;
+    color:black;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  #register {
+    background-color: black;
+    color: white;
+    padding-bottom: 5px
+  }
