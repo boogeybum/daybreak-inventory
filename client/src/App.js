@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import LotsForm from "./components/lots/lotAdd";
-import ItemCategoryForm from "./pages/itemCategoryForm";
+import ItemCategoryForm from "./components/categoryForm/itemCategoryForm";
 // import InventoryForm from "./components";
 import UserForm from "./components/userForm/addUser";
 import CustomerForm from "./components/customers/CustomerForm";

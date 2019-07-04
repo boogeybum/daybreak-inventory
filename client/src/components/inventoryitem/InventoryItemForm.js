@@ -66,6 +66,7 @@ class InventoryitemForm extends Component {
     render() {
         return (
             <div className="container inventoryitem">
+                <h3 className="display-4">Inventory Items</h3>
                 {/* button that toggles a form to add a new inventoryitem */}
                 <FormBtn data-toggle="collapse" data-target="#add-inventoryitem" type="button" style={{ borderBottom: "solid", borderColor: "green" }}>Add Inventory Item <span style={{ paddingLeft: "10px" }}>+</span></FormBtn>
 

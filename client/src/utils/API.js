@@ -1,9 +1,15 @@
 import axios from "axios";
 
 export default {
-  getitemcategories: () => {
+  // This API gets item categories currently saved to the DB
+  getItemCategories: () => {
     return axios.get("/api/itemcategory");
   },
+  // This API writes new item categories to the DB
+  addCategoryToDB: (itemCategoryData) => {
+    return axios.post("/api/itemcategory", itemCategoryData);
+  },
+
   // This API saves a customer to the database
   saveCustomer: function (customerData) {
     return axios.post("/api/customer", customerData);
@@ -14,12 +20,6 @@ export default {
     return axios.get("api/customer");
   },
 
-  // addCategoryToDB: (itemcategoriesData) => {
-  //   return axios.post("/api/Itemcategory", itemcategoriesData);
-  // }
-  // getCustomers: () => {
-  //   return axios.get("api/customers");
-  // }
   saveLots: function (lotData) {
     return axios.post("/api/lot", lotData);
   },

@@ -11,8 +11,8 @@ export function FormRow (props) {
 
 export function Input(props) {
   return (
-    <div className= {props.colSpecs ? props.colSpecs: "form-group"} {...props}>
-      <label forhtml = {props.id}>{props.labelText}</label>
+    <div className= {props.colspecs ? props.colspecs: "form-group"} {...props}>
+      <label forhtml = {props.id}>{props.labeltext}</label>
       <input className="form-control" {...props} />
     </div>
   );
@@ -27,7 +27,7 @@ export function Label (props) {
 export function TextArea(props) {
   return (
     <div className= {props.className ? props.className : "form-group"} {...props}>
-      <label for = {props.id}>{props.labelText}</label>
+      <label for = {props.id}>{props.labeltext}</label>
       <textarea className="form-control" {...props} />
     </div>
   );
@@ -35,7 +35,7 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} className= {props.btnDetails ?  props.btnDetails : "btn" }>
+    <button {...props} className= {props.btndetails ?  props.btndetails : "btn" }>
       {props.children}
     </button>
   );
