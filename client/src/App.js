@@ -20,6 +20,7 @@ class App extends Component {
           <Header />
           <div className="row">
           <Nav />
+          <main className="wrapper">
           <Switch>
             <Route exact path="/lots" component={LotsForm}/>
             <Route exact path="/itemcategories" component={ItemCategoryForm}/>
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/inventoryitems" component={InventoryItemForm}/>
             {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
           </Switch>
+          </main>
           </div>
           {/* <div id ="App">
             <FormBtn data-toggle = "collapse" data-target = "#add-customer" type = "button" style = {{borderBottom: "solid", borderColor: "green"}}>Add Customer <span style = {{paddingLeft: "10px"}}>+</span></FormBtn>

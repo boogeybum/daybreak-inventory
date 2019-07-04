@@ -9,14 +9,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 10vh;
+  height: 16vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 10vmin);
   color: white;
+  background-size: cover;
+  /* background-image: url("images/softCross.jpg"); */
+  background-image: url("images/blueAbstract.jpg");
+  /* background-image: url("images/blueTile.jpg"); */
+  /* background-image: url("images/treetops.jpg"); */
 }
 
 .App-link {
@@ -26,17 +32,32 @@
 .Navsidebar {
   background-color: #282c34;
   min-height: 5vh;
+  height: 150vh;
   /* max-width: 30vh; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: left;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(7px + 2vmin);
+  background-size: cover;
+  /* background-image: url("images/softCross.jpg"); */
+  background-image: url("images/blueAbstract.jpg");
+  /* background-image: url("images/blueTile.jpg"); */
+  /* background-image: url("images/treetops.jpg"); */
+    width: 200px;
+  
+
 }
 
 .NavLink {
   color: white;
-  margin: 1px 20px;
+  margin: 8px 20px;
+  /* border: 1px solid yellowgreen ; */
+  padding: 1vh;
+  border-width: .35vw;
+  border-style: double;
+  border-color: #f9c411;
+  width: 175px;
 }
 
 .NavLink :hover {
@@ -49,13 +70,12 @@
   background-color: #000000;
   color: #1414df;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper {
+  margin: 45px;
 }
 
+.AddBtn {
+  border-bottom: solid;
+  border-color: green;
+
+}
