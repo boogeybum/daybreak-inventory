@@ -80,10 +80,10 @@ class InventoryitemForm extends Component {
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>
                 </div>
-                
+                <p></p>
                 {/* Table for existing inventoryitems in the database */}
-                <table className="table">
-                    <thead>
+                <table className="table table-striped">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Total in Stock</th>

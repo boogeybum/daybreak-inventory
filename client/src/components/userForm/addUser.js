@@ -89,9 +89,10 @@ class UserForm extends Component {
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>
                 </div>
+                <p></p>
                 {
-                <table className="table">
-                    <thead>
+                <table className="table table-striped">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">UserID</th>

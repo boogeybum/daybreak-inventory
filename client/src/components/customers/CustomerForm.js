@@ -85,9 +85,10 @@ class CustomerForm extends Component {
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form>
                 </div>
+                <p></p>
                 {/* Table for existing customers in the database */}
-                <table className="table">
-                    <thead>
+                <table className="table table-striped">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">First Name</th>
