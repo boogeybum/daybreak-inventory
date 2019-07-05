@@ -37,7 +37,7 @@ var _ITEMCATEGORY = require("./models/seedData/itemcategory.json");
 var _USERS = require("./models/seedData/users.json");
 var _INVENTORYITEMS = require("./models/seedData/inventoryitem.json");
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -50,6 +50,13 @@ db.sequelize
   .then(function() {
       console.log("syncOptions.force: "+syncOptions.force);
       if(syncOptions.force === true) {
+        db.Pricerange.bulkCreate(_PRICERANGE)
+        .then(function(pricerange) {
+            console.log("success seeding PRICERANGE " + pricerange);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
         db.Lot.bulkCreate(_LOTS)
         .then(function(lots) {
             console.log("success seeding LOTS " + lots);
@@ -60,13 +67,6 @@ db.sequelize
         db.Customer.bulkCreate(_CUSTOMERS)
         .then(function(customers) {
             console.log("success seeding CUSTOMERS " + customers);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-        db.Pricerange.bulkCreate(_PRICERANGE)
-        .then(function(pricerange) {
-            console.log("success seeding PRICERANGE " + pricerange);
         })
         .catch(function(error) {
             console.log(error);
