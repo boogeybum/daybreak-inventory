@@ -22,6 +22,7 @@ class App extends Component {
           <Header />
           <div className="row">
           <Nav />
+          <main className="wrapper">
           <Switch>
             <Route exact path="/" component={Signup}/>
             <Route exact path="/signup" component={Signup}/>
@@ -35,6 +36,7 @@ class App extends Component {
             
             {/* <Route exact path="/checkout" component={CheckoutForm}/> */}
           </Switch>
+          </main>
           </div>
           {/* <div id ="App">
             <FormBtn data-toggle = "collapse" data-target = "#add-customer" type = "button" style = {{borderBottom: "solid", borderColor: "green"}}>Add Customer <span style = {{paddingLeft: "10px"}}>+</span></FormBtn>
