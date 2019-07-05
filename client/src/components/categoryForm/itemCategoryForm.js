@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { Input, FormBtn, FormRow } from "../form tools/form";
 import API from "../../utils/API";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+const trash = <FontAwesomeIcon icon={faTrash} />
+const edit = <FontAwesomeIcon icon={faEdit} />
 
 class ItemCategoryForm extends Component {
     // setting a state representing itemCategory details
@@ -52,6 +58,17 @@ class ItemCategoryForm extends Component {
         }
     };
 
+    editClick = event => {
+        event.preventDefault();
+            console.log("Edit Clicked");    
+    };
+    
+    deleteClick = event => {
+        event.preventDefault();
+        console.log("Delete Clicked");
+    };
+
+
     render() {
         return (
             <div className="container categories">
@@ -84,6 +101,7 @@ class ItemCategoryForm extends Component {
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Description</th>
+                            <th><span>&nbsp;&nbsp;</span>{edit} <span>&nbsp;&nbsp;</span> {trash}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,6 +109,7 @@ class ItemCategoryForm extends Component {
                             <tr key={index}>
                                 <th scope="row">{itemCategory.id}</th>
                                 <td>{itemCategory.description}</td>
+                                <td><button name="edit" onClick={this.editClick}>{edit}</button> <button name="delete" onClick={this.deleteClick}>{trash}</button></td>
                             </tr>
                         ))}
                     </tbody>
