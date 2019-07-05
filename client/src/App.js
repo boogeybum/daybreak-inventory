@@ -17,6 +17,7 @@ import Dashboard from "./components/dashboard/Dashboard"
 class App extends Component {
   render() {
     return (
+      <div className="mainWrapper" >
       <Router>
         <div className="container-flex">
           <Header />
@@ -38,6 +39,7 @@ class App extends Component {
           </Switch>
           </main>
           </div>
+          
           {/* <div id ="App">
             <FormBtn data-toggle = "collapse" data-target = "#add-customer" type = "button" style = {{borderBottom: "solid", borderColor: "green"}}>Add Customer <span style = {{paddingLeft: "10px"}}>+</span></FormBtn>
             <CustomerForm />
@@ -49,6 +51,7 @@ class App extends Component {
           </div> */}
         </div>
       </Router>
+      </div>
     );
   }
 }

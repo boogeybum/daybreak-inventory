@@ -1,12 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
 .App-header {
   /* background-color: #282c34; */
@@ -23,16 +15,19 @@
   background-image: url("images/blueAbstract.jpg");
   /* background-image: url("images/blueTile.jpg"); */
   /* background-image: url("images/treetops.jpg"); */
+  border: 0px solid green;
 }
 
 .App-link {
   color: #61dafb;
 }
-
+.mainWrapper {
+  width: 100%;
+}
 .Navsidebar {
-  background-color: #282c34;
-  min-height: 5vh;
-  height: 150vh;
+  /* background-color: #282c34; */
+  /* min-height: 5vh; */
+  /* height: 150vh; */
   /* max-width: 30vh; */
   display: flex;
   flex-direction: column;
@@ -44,20 +39,20 @@
   background-image: url("images/blueAbstract.jpg");
   /* background-image: url("images/blueTile.jpg"); */
   /* background-image: url("images/treetops.jpg"); */
-    width: 200px;
-  
+    width: 20vw;
+    /* width: 100%; */
+    border: 0px solid green;
 
 }
 
 .NavLink {
   color: white;
-  margin: 8px 20px;
-  /* border: 1px solid yellowgreen ; */
-  padding: 1vh;
-  border-width: .35vw;
+  margin: .4vw .82vw;
+  padding: .6vw;
+  border-width: .45vw;
   border-style: double;
   border-color: #f9c411;
-  width: 175px;
+  width: 17vw;
 }
 
 .NavLink :hover {
@@ -71,7 +66,15 @@
   color: #1414df;
 }
 .wrapper {
-  margin: 45px;
+  margin-left: 4.5vw;
+  width: 78vw;
+  border: 0px solid red;
+}
+.mainWrapper {
+ 
+  /* margin-left: 45px; */
+  /* width: 75%; */
+  border: 0px solid blue;
 }
 
 .AddBtn {
