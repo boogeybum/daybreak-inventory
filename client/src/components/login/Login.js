@@ -4,17 +4,17 @@
 // eslint-disable-next-line
 import React, { Component } from 'react';
 
-import './App.css';
+import './Login.css';
 
-class App extends Component {
+class Login extends Component {
   
   render() {
     
     return (
 
-      <div className="App">
-      <div className="App__Aside"></div>
-      <div className="App__Form">
+      <div className="Login">
+      <div className="Login__Aside"></div>
+      <div className="Login__Form">
       <div className="PageSwitcher">
           <a href="#" className="PageSwitcher__Item">Sign In</a>
           <a href="#" className="PageSwitcher__Item PageSwitcher__Item--Active">Sign Up</a>
@@ -73,4 +73,4 @@ class App extends Component {
     );
   }
 }   
-export default App;
+export default Login;

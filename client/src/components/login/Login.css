@@ -5,16 +5,19 @@
 }
 
 .App__Aside {
-  width: 50%;
+  /* width: 50%; */
   background-color: #66DAC7;
-  padding-left: "resaleReport-00-mainCover.jpg";
+  /* padding-left: "resaleReport-00-mainCover.jpg"; */
   background-image: url("https://cf-assets-tup.thredup.com/resale_report/2019/resaleReport-00-mainCover.jpg");
+  background-size: cover;
+  float: left;
 }
 
 .App__Form {
-  width: 50%;
-  background-color: #2E4158;
-  padding: 25px 40px;
+  /* width: 50%; */
+  background-color: #61dafb;
+  /* background-color: #2E4158; */
+  /* padding: 25px 40px; */
   overflow: auto;
 }
 
@@ -25,7 +28,8 @@
 }
 
 .PageSwitcher__Item {
-  background-color: #4C5D72;
+  background-color: #61dafb;
+  /* background-color: #4C5D72; */
   color: #9DA6B1;
   padding: 10px 25px;
   cursor: pointer;
@@ -66,7 +70,7 @@
   display: inline-block;
   font-size: 1.7em;
   margin: 0 10px;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
 }
 
 .FormTitle__Link:first-child {
