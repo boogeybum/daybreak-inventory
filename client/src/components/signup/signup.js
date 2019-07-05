@@ -96,11 +96,11 @@ class Home extends Component {
                     <div className="col-md-4" id="register">
                         {/* Nav tab */}
                         <ul className="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#signup">Sign Up</a>
+                            <li className="nav-item">
+                                <a className="nav-link active" data-toggle="tab" href="#signup">Sign Up</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#signin">Sign in</a>
+                            <li className="nav-item">
+                                <a className="nav-link" data-toggle="tab" href="#signin">Sign in</a>
                             </li>
                         </ul>
                         {/* Tab panes */}
@@ -111,7 +111,7 @@ class Home extends Component {
                                 <Input
                                     name="name"
                                     value={this.state.name}
-                                    id=""
+                                    id="name-signup"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="Enter your name"
@@ -122,7 +122,7 @@ class Home extends Component {
                                 <Input
                                     name="email"
                                     value= {this.state.email}
-                                    id=""
+                                    id="email-signup"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="Email"
@@ -133,7 +133,7 @@ class Home extends Component {
                                  <Input
                                     name="role"
                                     value= {this.state.role}
-                                    id=""
+                                    id="role-signup"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="role"
@@ -143,7 +143,7 @@ class Home extends Component {
                                 <Input
                                     name="password"
                                     value={this.state.password}
-                                    id=""
+                                    id="password-signup"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="Enter password"
@@ -153,7 +153,7 @@ class Home extends Component {
                                 />
                                 <FormBtn
                                     type="submit"
-                                    btnDetails="btn btn-success"
+                                    btndetails="btn btn-success"
                                     disabled= {!(this.state.name && this.state.email && this.state.password)}
                                     onClick= {this.handleFormSubmit}
                                 >Submit</FormBtn>
@@ -163,7 +163,7 @@ class Home extends Component {
                                 <Input
                                     name="email"
                                     value={this.state.email}
-                                    id=""
+                                    id="email-signin"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="Email"
@@ -174,7 +174,7 @@ class Home extends Component {
                                 <Input
                                     name="password"
                                     value= {this.state.password}
-                                    id=""
+                                    id="password-signin"
                                     colspecs=""
                                     onChange= {this.handleInputChange}
                                     placeholder="Enter password"
@@ -184,7 +184,7 @@ class Home extends Component {
                                 />
                                 <FormBtn
                                     type="submit"
-                                    btnDetails="btn btn-success"
+                                    btndetails="btn btn-success"
                                     disabled= {!(this.state.email && this.state.password)}
                                     onClick= {this.handleLogin}
                                 >Login</FormBtn>
@@ -214,7 +214,7 @@ class Home extends Component {
                             onChange={this.handleInputChange} />
                         <Input name="phone" placeholder="phone (required)" colspecs="form-group col-sm-12" id="phone" labeltext="phone" value={this.state.phone}
                             onChange={this.handleInputChange} />
-                        <FormBtn type="submit" btnDetails={"btn btn-success"}
+                        <FormBtn type="submit" btndetails={"btn btn-success"}
                             disabled={!(this.state.firstname && this.state.lastname && this.state.email && this.state.address)}
                             onClick={this.handleFormSubmit}>Submit</FormBtn>
                     </form> */}
