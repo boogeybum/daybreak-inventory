@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moment from 'react-moment';
 import { Input, FormBtn, FormRow } from "../form tools/form";
 import API from "../../utils/API";
 
@@ -106,7 +107,7 @@ class LotsForm extends Component {
                                 <th scope="row">{lots.id}</th>
                                 <td>{lots.color}</td>
                                 <td>{lots.count}</td>
-                                <td>{lots.purchasedate}</td>
+                                <td><Moment format="MM/DD/YYYY">{lots.purchasedate}</Moment></td>
                                 <td>{lots.cost}</td>
                                 <td>{lots.seller}</td>
                             </tr>
