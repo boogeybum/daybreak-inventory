@@ -42,11 +42,13 @@ class ItemCategoryForm extends Component {
             API.addCategoryToDB({
                 description: this.state.description
             })
-                .then(res => console.log(res))
+                .then(res => {
+                    this.loadCategories();
+                    this.setState({
+                        description: ""
+                    });
+                    console.log(res)})
                 .catch(err => console.log(err));
-            this.setState({
-                description: ""
-            });
         }
     };
 

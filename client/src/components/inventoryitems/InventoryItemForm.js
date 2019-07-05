@@ -50,7 +50,16 @@ class InventoryitemForm extends Component {
                 LotId: this.state.LotId,
                 ItemcategoryId: this.state.ItemcategoryId
             })
-                .then(res => console.log(res))
+                .then(res => {
+                    this.loadInventoryitems();
+                    this.setState({
+                        totalinstock: "",
+                        totalsales: "",
+                        price: "",
+                        LotId: "",
+                        ItemcategoryId: ""
+                    });
+                    console.log(res)})
                 .catch(err => console.log(err));
         }
     };

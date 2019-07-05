@@ -53,7 +53,14 @@ class LotsForm extends Component {
                 seller: this.state.seller
             })
                 .then(res =>{
-                    this.loadLots()
+                    this.loadLots();
+                    this.setState({
+                        color: "",
+                        count: "",
+                        datePurchased: "",
+                        purchasePrice: "",
+                        seller: ""
+                    });
                      console.log(res)})
                 .catch(err => console.log(err));
         }

@@ -51,10 +51,18 @@ class UserForm extends Component {
                 password: this.state.password
             })
                 .then(res =>{
-                    this.loadUsers()
+                    this.loadUsers();
+                    this.setState({
+                        userid: "",
+                        name: "",
+                        role: "",
+                        email: "",
+                        password: ""
+                    });
                      console.log(res)})
 
                 .catch(err => console.log(err));
+                
         }
     };
 

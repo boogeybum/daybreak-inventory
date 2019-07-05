@@ -50,7 +50,16 @@ class CustomerForm extends Component {
                 address: this.state.address,
                 phone: this.state.phone
             })
-                .then(res => console.log(res))
+                .then(res => {
+                    this.loadCustomers();
+                    this.setState({
+                        firstname: "",
+                        lastname: "",
+                        email: "",
+                        address: "",
+                        phone: ""
+                    });
+                    console.log(res)})
                 .catch(err => console.log(err));
         }
     };
