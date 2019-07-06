@@ -9,6 +9,10 @@ export default {
   addCategoryToDB: (itemCategoryData) => {
     return axios.post("/api/itemcategory", itemCategoryData);
   },
+  // This API edits an existing category
+  editItemCategory: (itemCategoryData) => {
+    return axios.put("/api/itemcategory", itemCategoryData);
+  },
 
   // This API saves a customer to the database
   saveCustomer: function (customerData) {
