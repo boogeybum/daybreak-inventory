@@ -6,4 +6,4 @@ It segregates inventory and costs, into manageable lots of goods purchased and t
 It lets entrepreneurs know when the lot has been paid, which allows item discounts to begin.
 
 
-<img src="client/src/images/Daybreak_ScreenshotJPG.JPG">
+<img src="client/src/images/Daybreak_ScreenShotJPG.JPG" >
